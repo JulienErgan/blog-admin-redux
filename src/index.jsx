@@ -9,8 +9,11 @@ import { createHistory as history } from 'history';
 
 import '../assets/stylesheets/application.scss';
 
+import postsReducer from './reducers/posts_reducers';
+
 const reducers = combineReducers({
   // key: reducer
+  posts: postsReducer
 });
 
 const middlewares = applyMiddleware(reduxPromise, logger);
