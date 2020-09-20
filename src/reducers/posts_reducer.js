@@ -1,8 +1,11 @@
+import { FETCH_POSTS, FETCH_POST } from '../actions/index';
+
 export default function(state = [], action) {
     switch(action.type) {
-        // case ???:
-        //     return ??
-
+        case FETCH_POSTS:
+            return action.payload;
+        case FETCH_POST:
+            return [ action.payload ];
         default:
             return state
     }
