@@ -9,6 +9,7 @@ import { createHistory as history } from 'history';
 
 import PostsShow from './containers/posts_show';
 import PostsIndex from './containers/posts_index';
+import PostsNew from './containers/posts_new';
 
 import '../assets/stylesheets/application.scss';
 
@@ -28,6 +29,7 @@ ReactDOM.render(
       <div className="thin-container">
           <Switch>
             <Route path="/" exact component={PostsIndex} />
+            <Route path="/posts/new" exact component={PostsNew} />
             <Route path="/posts/:id" component={PostsShow} />
           </Switch>
         </div>

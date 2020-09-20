@@ -5,6 +5,8 @@ const API_KEY = 'LEWAGON-BLOG'
 
 export const FETCH_POSTS = 'FETCH_POSTS';
 export const FETCH_POST = 'FETCH_POST';
+export const POST_CREATED = 'POST_CREATED';
+
 
 export function fetchPosts() {
     // AJAX request
@@ -26,3 +28,17 @@ export function fetchPost(id) {
         payload: promise
     };
 }
+
+export function createPost(body) {
+    const request = fetch(`${ROOT_URL}?key=${API_KEY}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' }, 
+        body: JSON.stringify(body)
+    }).then(response => response.json());
+
+    return {
+        type: POST_CREATED, 
+        payload: request
+    }; 
+}
+
