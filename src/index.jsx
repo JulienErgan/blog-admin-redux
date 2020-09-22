@@ -6,6 +6,7 @@ import reduxPromise from 'redux-promise';
 import logger from 'redux-logger';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { createHistory as history } from 'history';
+import { reducer as formReducer } from 'redux-form';
 
 import PostsShow from './containers/posts_show';
 import PostsIndex from './containers/posts_index';
@@ -17,7 +18,8 @@ import postsReducer from './reducers/posts_reducer';
 
 const reducers = combineReducers({
   // key: reducer
-  posts: postsReducer
+  posts: postsReducer,
+  form: formReducer
 });
 
 const middlewares = applyMiddleware(reduxPromise, logger);
